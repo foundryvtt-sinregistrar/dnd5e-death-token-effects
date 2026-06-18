@@ -63,6 +63,19 @@ HP <= 0 and 3+ death failures
   → applies Dead status
   → removes Bloodied status if present
 ```
+---
+
+## Preview
+
+| State | Screenshot |
+|---|---|
+| Healthy / full HP | ![Healthy token](docs/images/status-demo/01-full-hp.png) |
+| Wounded / half HP | ![Wounded token](docs/images/status-demo/02-half-hp.png) |
+| Near death / 1 HP | ![Token at 1 HP](docs/images/status-demo/03-one-hp.png) |
+| Dying / 0 HP | ![Dying token at 0 HP](docs/images/status-demo/04-zero-hp-dying.png) |
+| 1 death saving throw failure | ![Token with 1 death saving throw failure](docs/images/status-demo/05-death-save-failure-1.png) |
+| 2 death saving throw failures | ![Token with 2 death saving throw failures](docs/images/status-demo/06-death-save-failure-2.png) |
+| 3 failures / Dead | ![Dead token with 3 death saving throw failures](docs/images/status-demo/07-death-save-failure-3-dead.png) |
 
 ---
 

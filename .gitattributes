@@ -9,6 +9,7 @@ dist/                export-ignore
 _release-zip/        export-ignore
 DEVELOPER.md         export-ignore
 _toDoo.md            export-ignore
+docs/images/**       export-ignore
 
 # Docs are intentionally kept in the ZIP
 # README.md          export-ignore

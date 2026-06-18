@@ -65,6 +65,20 @@ HP <= 0 y 3+ fallos de muerte
   → aplica el estado Dead / Muerto
   → quita el estado Bloodied / Ensangrentado si existe
 ```
+---
+
+## Vista previa
+
+| Estado | Captura |
+|---|---|
+| Sin heridas / toda la vida | ![Token sin heridas](docs/images/status-demo/01-full-hp.png) |
+| Malherido / mitad de vida | ![Token malherido](docs/images/status-demo/02-half-hp.png) |
+| Casi muerto / 1 HP | ![Token con 1 HP](docs/images/status-demo/03-one-hp.png) |
+| Moribundo / 0 HP | ![Token moribundo a 0 HP](docs/images/status-demo/04-zero-hp-dying.png) |
+| 1 fallo de muerte | ![Token con 1 fallo de muerte](docs/images/status-demo/05-death-save-failure-1.png) |
+| 2 fallos de muerte | ![Token con 2 fallos de muerte](docs/images/status-demo/06-death-save-failure-2.png) |
+| 3 fallos / muerto | ![Token muerto con 3 fallos](docs/images/status-demo/07-death-save-failure-3-dead.png) |
+
 
 ---
 
