@@ -1,0 +1,77 @@
+{
+  "DND5EDEATH": {
+    "module": {
+      "name": "D&D5e Death Token Effects",
+      "description": "Muestra el icono de muerte de D&D5e sobre el token según los fallos de salvación de muerte y aplica el estado Muerto al llegar a 3 fallos."
+    },
+    "settings": {
+      "deadImage": {
+        "name": "Imagen superpuesta",
+        "hint": "Ruta de la imagen que se mostrará encima del token según sus fallos de salvación de muerte."
+      },
+      "overlayColor": {
+        "name": "Color de la imagen superpuesta",
+        "hint": "Color aplicado al icono superpuesto. Por defecto es rojo sangre."
+      },
+      "alphaFailure1": {
+        "name": "Transparencia con 1 fallo de muerte",
+        "hint": "Opacidad del icono cuando el personaje tiene 1 salvación de muerte fallida."
+      },
+      "alphaFailure2": {
+        "name": "Transparencia con 2 fallos de muerte",
+        "hint": "Opacidad del icono cuando el personaje tiene 2 salvaciones de muerte fallidas."
+      },
+      "alphaFailure3": {
+        "name": "Transparencia con 3+ fallos de muerte",
+        "hint": "Opacidad del icono cuando el personaje tiene 3 o más salvaciones de muerte fallidas."
+      },
+      "showAtZeroFailures": {
+        "name": "Mostrar icono con 0 fallos",
+        "hint": "Si está activo, muestra un icono muy tenue cuando el token está a 0 HP aunque todavía no tenga fallos de salvación de muerte."
+      },
+      "alphaFailure0": {
+        "name": "Transparencia con 0 fallos",
+        "hint": "Solo se usa si está activa la opción 'Mostrar icono con 0 fallos'."
+      },
+      "fitDeadImageToGrid": {
+        "name": "Ajustar imagen superpuesta a la cuadrícula del token",
+        "hint": "Si está activo, el icono ocupará el tamaño completo del token: 1x1, 2x2, 3x3, etc. No cambia el tamaño real del token."
+      },
+      "overlaySizeRatio": {
+        "name": "Tamaño del icono respecto al token",
+        "hint": "Tamaño del icono respecto al token. Se coloca en la esquina inferior derecha y el máximo permitido es 50%."
+      },
+      "applyDeadAtThreeFailures": {
+        "name": "Aplicar estado Muerto con 3+ fallos",
+        "hint": "Cuando los fallos de salvación de muerte sean 3 o más, aplica el estado Dead/Muerto al actor/token."
+      },
+      "removeBloodiedAtDeath": {
+        "name": "Quitar estado Ensangrentado al morir",
+        "hint": "Cuando se aplica Dead/Muerto por 3+ fallos, elimina el estado Bloodied/Ensangrentado si está presente."
+      },
+      "deadStatusAsOverlay": {
+        "name": "Aplicar Muerto como overlay de estado",
+        "hint": "Si está activo, Foundry mostrará el estado Dead/Muerto como overlay propio del sistema. Normalmente es mejor dejarlo desactivado porque este módulo ya dibuja el icono encima."
+      },
+      "removeDeadWhenHealed": {
+        "name": "Quitar Muerto al recuperar HP",
+        "hint": "Si está activo, elimina automáticamente el estado Dead/Muerto cuando el actor sube por encima de 0 HP. Por defecto está desactivado para que el DM mantenga control narrativo."
+      },
+      "legacyHpPath": {
+        "name": "Legacy - Ruta de los puntos de golpe"
+      },
+      "legacyOverlayAlpha": {
+        "name": "Legacy - Transparencia de la imagen superpuesta"
+      },
+      "legacyRestoreOnHeal": {
+        "name": "Legacy - Restaurar imagen al curarse"
+      },
+      "legacyKeepDeadImageUpright": {
+        "name": "Legacy - Mantener imagen de muerto recta"
+      },
+      "legacyNpcOnly": {
+        "name": "Legacy - Aplicar solo a PNJ"
+      }
+    }
+  }
+}

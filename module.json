@@ -1,7 +1,7 @@
 {
   "id": "dnd5e-death-token-effects",
-  "title": "D&D5e Death Token Effects",
-  "description": "Displays the D&D 5e death icon on the token based on death saving throws and applies the ‘Dead’ status when 3 failures are reached.",
+  "title": "DND5EDEATH.module.name",
+  "description": "DND5EDEATH.module.description",
   "version": "1.14.0",
   "authors": [
     {
@@ -21,6 +21,18 @@
       }
     ]
   },
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
+    }
+  ],
   "esmodules": [
     "scripts/dnd5e-death-token-effects.js"
   ],

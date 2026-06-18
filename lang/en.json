@@ -1,0 +1,77 @@
+{
+  "DND5EDEATH": {
+    "module": {
+      "name": "D&D5e Death Token Effects",
+      "description": "Displays the D&D 5e death icon over the token based on death saving throw failures and applies the Dead status when 3 failures are reached."
+    },
+    "settings": {
+      "deadImage": {
+        "name": "Overlay image",
+        "hint": "Path of the image displayed over the token based on failed death saving throws."
+      },
+      "overlayColor": {
+        "name": "Overlay image color",
+        "hint": "Color applied to the overlay icon. Defaults to blood red."
+      },
+      "alphaFailure1": {
+        "name": "Opacity with 1 death failure",
+        "hint": "Icon opacity when the character has 1 failed death saving throw."
+      },
+      "alphaFailure2": {
+        "name": "Opacity with 2 death failures",
+        "hint": "Icon opacity when the character has 2 failed death saving throws."
+      },
+      "alphaFailure3": {
+        "name": "Opacity with 3+ death failures",
+        "hint": "Icon opacity when the character has 3 or more failed death saving throws."
+      },
+      "showAtZeroFailures": {
+        "name": "Show icon with 0 failures",
+        "hint": "When enabled, shows a very faint icon when the token is at 0 HP even before any failed death saving throws."
+      },
+      "alphaFailure0": {
+        "name": "Opacity with 0 failures",
+        "hint": "Only used when “Show icon with 0 failures” is enabled."
+      },
+      "fitDeadImageToGrid": {
+        "name": "Fit overlay image to token grid size",
+        "hint": "When enabled, the icon scales against the full token size: 1x1, 2x2, 3x3, etc. It does not change the actual token size."
+      },
+      "overlaySizeRatio": {
+        "name": "Icon size relative to token",
+        "hint": "Icon size relative to the token. It is placed in the lower-right corner and the maximum allowed size is 50%."
+      },
+      "applyDeadAtThreeFailures": {
+        "name": "Apply Dead status at 3+ failures",
+        "hint": "When death saving throw failures reach 3 or more, applies the Dead status to the actor/token."
+      },
+      "removeBloodiedAtDeath": {
+        "name": "Remove Bloodied status on death",
+        "hint": "When Dead is applied at 3+ failures, removes Bloodied if present."
+      },
+      "deadStatusAsOverlay": {
+        "name": "Apply Dead as status overlay",
+        "hint": "When enabled, Foundry shows Dead as the system status overlay. Usually this should stay disabled because this module already draws its own icon over the token."
+      },
+      "removeDeadWhenHealed": {
+        "name": "Remove Dead when healed",
+        "hint": "When enabled, automatically removes Dead when the actor rises above 0 HP. Disabled by default so the GM keeps narrative control."
+      },
+      "legacyHpPath": {
+        "name": "Legacy - Hit point path"
+      },
+      "legacyOverlayAlpha": {
+        "name": "Legacy - Overlay image opacity"
+      },
+      "legacyRestoreOnHeal": {
+        "name": "Legacy - Restore image on heal"
+      },
+      "legacyKeepDeadImageUpright": {
+        "name": "Legacy - Keep dead image upright"
+      },
+      "legacyNpcOnly": {
+        "name": "Legacy - Apply only to NPCs"
+      }
+    }
+  }
+}

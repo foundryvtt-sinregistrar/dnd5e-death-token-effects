@@ -1,0 +1,13 @@
+# Ignorar carpetas temporales/locales
+_*/
+_*
+.idea/
+.vscode/
+
+# Release output
+dist/
+_release-zip/
+
+# OS
+.DS_Store
+Thumbs.db

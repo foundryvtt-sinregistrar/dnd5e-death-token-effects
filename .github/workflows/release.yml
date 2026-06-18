@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate module version matches tag
+        shell: bash
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          MODULE_VERSION="$(python - <<'PY'
+          import json
+          with open('module.json', encoding='utf-8') as f:
+              print(json.load(f)['version'])
+          PY
+          )"
+          echo "Tag: ${TAG_VERSION}"
+          echo "module.json: ${MODULE_VERSION}"
+          test "${TAG_VERSION}" = "${MODULE_VERSION}"
+
+      - name: Build release ZIP
+        run: python dev-tools/buildScripts/build_release.py
+
+      - name: Create draft release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          generate_release_notes: true
+          files: |
+            module.json
+            README.md
+            README.en.md
+            CHANGELOG.md
+            LICENSE
+            dist/*.zip

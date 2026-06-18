@@ -26,8 +26,8 @@ const pendingBloodiedRemovalActors = new Set();
 
 Hooks.once("init", () => {
   game.settings.register(MODULE_ID, "deadImage", {
-    name: "Imagen superpuesta",
-    hint: "Ruta de la imagen que se mostrará encima del token según sus fallos de salvación de muerte.",
+    name: "DND5EDEATH.settings.deadImage.name",
+    hint: "DND5EDEATH.settings.deadImage.hint",
     scope: "world",
     config: true,
     type: String,
@@ -35,8 +35,8 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "overlayColor", {
-    name: "Color de la imagen superpuesta",
-    hint: "Color aplicado al icono superpuesto. Por defecto es rojo sangre.",
+    name: "DND5EDEATH.settings.overlayColor.name",
+    hint: "DND5EDEATH.settings.overlayColor.hint",
     scope: "world",
     config: true,
     type: String,
@@ -44,8 +44,8 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "alphaFailure1", {
-    name: "Transparencia con 1 fallo de muerte",
-    hint: "Opacidad del icono cuando el personaje tiene 1 salvación de muerte fallida.",
+    name: "DND5EDEATH.settings.alphaFailure1.name",
+    hint: "DND5EDEATH.settings.alphaFailure1.hint",
     scope: "world",
     config: true,
     type: Number,
@@ -54,8 +54,8 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "alphaFailure2", {
-    name: "Transparencia con 2 fallos de muerte",
-    hint: "Opacidad del icono cuando el personaje tiene 2 salvaciones de muerte fallidas.",
+    name: "DND5EDEATH.settings.alphaFailure2.name",
+    hint: "DND5EDEATH.settings.alphaFailure2.hint",
     scope: "world",
     config: true,
     type: Number,
@@ -64,8 +64,8 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "alphaFailure3", {
-    name: "Transparencia con 3+ fallos de muerte",
-    hint: "Opacidad del icono cuando el personaje tiene 3 o más salvaciones de muerte fallidas.",
+    name: "DND5EDEATH.settings.alphaFailure3.name",
+    hint: "DND5EDEATH.settings.alphaFailure3.hint",
     scope: "world",
     config: true,
     type: Number,
@@ -74,8 +74,8 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "showAtZeroFailures", {
-    name: "Mostrar icono con 0 fallos",
-    hint: "Si está activo, muestra un icono muy tenue cuando el token está a 0 HP aunque todavía no tenga fallos de salvación de muerte.",
+    name: "DND5EDEATH.settings.showAtZeroFailures.name",
+    hint: "DND5EDEATH.settings.showAtZeroFailures.hint",
     scope: "world",
     config: true,
     type: Boolean,
@@ -83,8 +83,8 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "alphaFailure0", {
-    name: "Transparencia con 0 fallos",
-    hint: "Solo se usa si está activa la opción 'Mostrar icono con 0 fallos'.",
+    name: "DND5EDEATH.settings.alphaFailure0.name",
+    hint: "DND5EDEATH.settings.alphaFailure0.hint",
     scope: "world",
     config: true,
     type: Number,
@@ -93,8 +93,8 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "fitDeadImageToGrid", {
-    name: "Ajustar imagen superpuesta a la cuadrícula del token",
-    hint: "Si está activo, el icono ocupará el tamaño completo del token: 1x1, 2x2, 3x3, etc. No cambia el tamaño real del token.",
+    name: "DND5EDEATH.settings.fitDeadImageToGrid.name",
+    hint: "DND5EDEATH.settings.fitDeadImageToGrid.hint",
     scope: "world",
     config: true,
     type: Boolean,
@@ -102,8 +102,8 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "overlaySizeRatio", {
-    name: "Tamaño del icono respecto al token",
-    hint: "Tamaño del icono respecto al token. Se coloca en la esquina inferior derecha y el máximo permitido es 50%.",
+    name: "DND5EDEATH.settings.overlaySizeRatio.name",
+    hint: "DND5EDEATH.settings.overlaySizeRatio.hint",
     scope: "world",
     config: true,
     type: Number,
@@ -112,8 +112,8 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "applyDeadAtThreeFailures", {
-    name: "Aplicar estado Muerto con 3+ fallos",
-    hint: "Cuando los fallos de salvación de muerte sean 3 o más, aplica el estado Dead/Muerto al actor/token.",
+    name: "DND5EDEATH.settings.applyDeadAtThreeFailures.name",
+    hint: "DND5EDEATH.settings.applyDeadAtThreeFailures.hint",
     scope: "world",
     config: true,
     type: Boolean,
@@ -121,8 +121,8 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "removeBloodiedAtDeath", {
-    name: "Quitar estado Ensangrentado al morir",
-    hint: "Cuando se aplica Dead/Muerto por 3+ fallos, elimina el estado Bloodied/Ensangrentado si está presente.",
+    name: "DND5EDEATH.settings.removeBloodiedAtDeath.name",
+    hint: "DND5EDEATH.settings.removeBloodiedAtDeath.hint",
     scope: "world",
     config: true,
     type: Boolean,
@@ -130,8 +130,8 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "deadStatusAsOverlay", {
-    name: "Aplicar Muerto como overlay de estado",
-    hint: "Si está activo, Foundry mostrará el estado Dead/Muerto como overlay propio del sistema. Normalmente es mejor dejarlo desactivado porque este módulo ya dibuja el icono encima.",
+    name: "DND5EDEATH.settings.deadStatusAsOverlay.name",
+    hint: "DND5EDEATH.settings.deadStatusAsOverlay.hint",
     scope: "world",
     config: true,
     type: Boolean,
@@ -139,8 +139,8 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "removeDeadWhenHealed", {
-    name: "Quitar Muerto al recuperar HP",
-    hint: "Si está activo, elimina automáticamente el estado Dead/Muerto cuando el actor sube por encima de 0 HP. Por defecto está desactivado para que el DM mantenga control narrativo.",
+    name: "DND5EDEATH.settings.removeDeadWhenHealed.name",
+    hint: "DND5EDEATH.settings.removeDeadWhenHealed.hint",
     scope: "world",
     config: true,
     type: Boolean,
@@ -149,7 +149,7 @@ Hooks.once("init", () => {
 
   // Legacy settings kept registered to avoid warnings when upgrading from v1.0.x/v1.1.x.
   game.settings.register(MODULE_ID, "hpPath", {
-    name: "Legacy - Ruta de los puntos de golpe",
+    name: "DND5EDEATH.settings.legacyHpPath.name",
     scope: "world",
     config: false,
     type: String,
@@ -157,7 +157,7 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "overlayAlpha", {
-    name: "Legacy - Transparencia de la imagen superpuesta",
+    name: "DND5EDEATH.settings.legacyOverlayAlpha.name",
     scope: "world",
     config: false,
     type: Number,
@@ -165,7 +165,7 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "restoreOnHeal", {
-    name: "Legacy - Restaurar imagen al curarse",
+    name: "DND5EDEATH.settings.legacyRestoreOnHeal.name",
     scope: "world",
     config: false,
     type: Boolean,
@@ -173,7 +173,7 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "keepDeadImageUpright", {
-    name: "Legacy - Mantener imagen de muerto recta",
+    name: "DND5EDEATH.settings.legacyKeepDeadImageUpright.name",
     scope: "world",
     config: false,
     type: Boolean,
@@ -181,7 +181,7 @@ Hooks.once("init", () => {
   });
 
   game.settings.register(MODULE_ID, "npcOnly", {
-    name: "Legacy - Aplicar solo a PNJ",
+    name: "DND5EDEATH.settings.legacyNpcOnly.name",
     scope: "world",
     config: false,
     type: Boolean,

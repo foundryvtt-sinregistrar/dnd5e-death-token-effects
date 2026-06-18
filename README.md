@@ -1,10 +1,19 @@
-# D&D5e Death Token Effects
+# 🇪🇸 D&D5e Death Token Effects
+
+![Foundry v14](https://img.shields.io/badge/Foundry-v14-green)
+![Foundry verified 14.363](https://img.shields.io/badge/Verified-14.363-blue)
+![System dnd5e](https://img.shields.io/badge/System-dnd5e-orange)
+![License MIT](https://img.shields.io/badge/License-MIT-lightgrey)
 
 Módulo para **Foundry VTT 14** y el sistema **D&D5e**.
 
-Muestra el icono de muerte de D&D5e sobre el token cuando un actor está a **0 HP** y tiene fallos de salvación de muerte. Además, puede aplicar automáticamente el estado **Dead / Muerto** al llegar a 3 fallos y quitar **Bloodied / Ensangrentado** si existe.
+Muestra el icono de muerte de D&D5e sobre el token cuando un actor está a **0 HP** y tiene fallos de salvación de muerte. También puede aplicar automáticamente el estado **Dead / Muerto** al llegar a 3 fallos y quitar **Bloodied / Ensangrentado** si existe.
 
-## Compatibilidad
+> English documentation: see **README.en.md**.
+
+---
+
+## 📦 Compatibilidad
 
 | Elemento | Versión |
 |---|---|
@@ -13,7 +22,9 @@ Muestra el icono de muerte de D&D5e sobre el token cuando un actor está a **0 H
 | Sistema | `dnd5e` |
 | Versión del módulo | `1.14.0` |
 
-## Criterio de versionado
+---
+
+## 🧭 Criterio de versionado
 
 Este módulo usa el segundo número de la versión como referencia a la versión mayor de **Foundry VTT** compatible.
 
@@ -24,20 +35,16 @@ Este módulo usa el segundo número de la versión como referencia a la versión
 └────── Versión mayor interna del módulo
 ```
 
-Ejemplos:
-
 | Versión | Significado |
 |---|---|
-| `1.14.0` | Primera versión pública del módulo para Foundry VTT v14 |
+| `1.14.0` | Primera versión pública para Foundry VTT v14 |
 | `1.14.1` | Corrección o mejora menor para Foundry VTT v14 |
-| `1.14.2` | Otro parche compatible con Foundry VTT v14 |
 | `1.15.0` | Versión adaptada/verificada para Foundry VTT v15 |
-| `2.14.0` | Cambio mayor del módulo manteniendo objetivo Foundry VTT v14 |
+| `2.14.0` | Cambio mayor interno manteniendo objetivo Foundry VTT v14 |
 
-> Esta numeración no significa que haya existido una versión `1.13.x` pública.  
-> El `14` se usa como referencia directa a la versión mayor de Foundry VTT.
+---
 
-## Qué hace
+## ✅ Qué hace
 
 ```text
 HP > 0
@@ -59,7 +66,9 @@ HP <= 0 y 3+ fallos de muerte
   → quita el estado Bloodied / Ensangrentado si existe
 ```
 
-## Características visuales
+---
+
+## 🎨 Características visuales
 
 El módulo:
 
@@ -70,78 +79,11 @@ El módulo:
 - aplica un margen interior de `3 px`;
 - limita el tamaño máximo del icono al `50%` del token;
 - añade un recuadro rojo alrededor de todo el token;
-- no debería bloquear el doble click sobre el token, porque el overlay se añade como elemento visual no interactivo.
+- usa elementos no interactivos para no bloquear el doble click sobre el token.
 
-## Rutas de D&D5e usadas
+---
 
-```text
-system.attributes.hp.value
-system.attributes.death.failure
-```
-
-## Imagen por defecto
-
-Usa esta imagen interna del sistema **D&D5e**:
-
-```text
-systems/dnd5e/icons/svg/statuses/dead.svg
-```
-
-## Color por defecto
-
-El icono y el recuadro se tiñen en rojo sangre:
-
-```text
-#8B0000
-```
-
-## Instalación mediante Manifest URL
-
-Puedes instalar el módulo desde Foundry usando esta URL de manifest:
-
-```text
-https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest/download/module.json
-```
-
-En Foundry:
-
-```text
-Add-on Modules → Install Module → Manifest URL
-```
-
-Pega la URL anterior y pulsa **Install**.
-
-## Instalación manual
-
-1. Descarga el ZIP de la release.
-2. Descomprime el archivo.
-3. Copia la carpeta:
-
-```text
-dnd5e-death-token-effects
-```
-
-dentro de:
-
-```text
-FoundryVTT/Data/modules/
-```
-
-En Docker/Windows puede ser algo parecido a:
-
-```text
-C:\docker\foundryvtt\foundryvtt-14\data\Data\modules\dnd5e-death-token-effects
-```
-
-4. Reinicia Foundry VTT.
-5. Entra en tu mundo.
-6. Activa el módulo desde:
-
-```text
-Manage Modules → D&D5e Death Token Effects
-```
-
-## Configuración
+## ⚙️ Configuración
 
 Ve a:
 
@@ -161,87 +103,137 @@ Opciones principales:
 | **Mostrar icono con 0 fallos** | Desactivado |
 | **Ajustar imagen superpuesta a la cuadrícula del token** | Activado |
 | **Tamaño del icono respecto al token** | `0.50` |
-| **Margen interior del icono** | `3 px` |
-| **Recuadro rojo alrededor del token** | Activado |
 | **Aplicar estado Muerto con 3+ fallos** | Activado |
 | **Quitar estado Ensangrentado al morir** | Activado |
 | **Aplicar Muerto como overlay de estado** | Desactivado |
 | **Quitar Muerto al recuperar HP** | Desactivado |
 
-## Nota de cambio de nombre
+---
 
-Este módulo viene de una versión local anterior llamada:
-
-```text
-dead-token-image
-```
-
-A partir de la versión pública `1.14.0`, el identificador interno correcto es:
+## 🧩 Rutas de D&D5e usadas
 
 ```text
-dnd5e-death-token-effects
+system.attributes.hp.value
+system.attributes.death.failure
 ```
 
-Foundry lo tratará como un módulo distinto. Si tenías instalada la versión local antigua, desactiva o elimina `dead-token-image` antes de usar esta versión pública.
-
-## Estructura del módulo
+Imagen por defecto:
 
 ```text
-dnd5e-death-token-effects/
-├─ module.json
-├─ README.md
-├─ LICENSE
-└─ scripts/
-   └─ dnd5e-death-token-effects.js
+systems/dnd5e/icons/svg/statuses/dead.svg
 ```
 
-## Publicación en GitHub
-
-Repositorio:
+Color por defecto:
 
 ```text
-https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects
+#8B0000
 ```
 
-Manifest:
+---
+
+## 🚀 Instalación
+
+### Opción 1 — Manifest URL
+
+En Foundry:
+
+```text
+Add-on Modules → Install Module → Manifest URL
+```
+
+Pega:
 
 ```text
 https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest/download/module.json
 ```
 
-Descarga:
+### Opción 2 — Instalación manual
+
+1. Descarga el ZIP de la release.
+2. Descomprime el archivo.
+3. Copia la carpeta `dnd5e-death-token-effects` dentro de:
 
 ```text
-https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest/download/dnd5e-death-token-effects.zip
+FoundryVTT/Data/modules/
 ```
 
-## Cambios de la versión 1.14.0
+En Docker/Windows puede ser algo parecido a:
 
-Primera versión pública orientada a **Foundry VTT v14**.
+```text
+C:\docker\foundryvtt\foundryvtt-14\data\Data\modules\dnd5e-death-token-effects
+```
 
-Incluye:
+4. Reinicia Foundry VTT.
+5. Entra en tu mundo.
+6. Activa el módulo desde `Manage Modules`.
 
-- cambio de identificador interno a `dnd5e-death-token-effects`;
-- compatibilidad mínima con Foundry VTT `14`;
-- verificación en Foundry VTT `14.363`;
-- soporte específico para sistema `dnd5e`;
-- icono `dead.svg` en esquina inferior derecha;
-- margen interior de `3 px`;
-- tamaño máximo del icono al `50%` del token;
-- recuadro rojo alrededor del token;
-- transparencias progresivas según fallos de salvación de muerte;
-- aplicación automática del estado `Dead / Muerto` con 3+ fallos;
-- eliminación segura de `Bloodied / Ensangrentado` si existe;
-- protección contra duplicados de `ActiveEffect`;
-- overlay no interactivo para no bloquear el doble click sobre el token.
+---
 
-## Licencia
+## 🏗️ Release / Publicación
 
-Este módulo se distribuye bajo la licencia indicada en el archivo `LICENSE`.
+Este proyecto incluye una infraestructura de release similar al otro módulo:
 
-## Créditos
+- `dev-tools/buildScripts/build_release.py` genera el ZIP desde `git archive`.
+- `.gitattributes` controla qué entra en el ZIP mediante `export-ignore`.
+- `.github/workflows/release.yml` crea una release draft al subir un tag `v*`.
+- Se suben dos ZIPs: `dnd5e-death-token-effects-<version>.zip` y `dnd5e-death-token-effects.zip`.
 
-Módulo mantenido por:
+Flujo recomendado:
+
+```bash
+git status
+python dev-tools/buildScripts/build_release.py --allow-dirty
+
+# Para publicar una release real:
+git add .
+git commit -m "build(release): add release infrastructure"
+git tag v1.14.0
+git push origin main
+git push origin v1.14.0
+```
+
+> Si `v1.14.0` ya existe en GitHub, sube la versión a `1.14.1` antes de crear el nuevo tag.
+
+---
+
+## 📂 Estructura
+
+```text
+dnd5e-death-token-effects/
+├─ .github/
+│  └─ workflows/
+│     └─ release.yml
+├─ dev-tools/
+│  └─ buildScripts/
+│     └─ build_release.py
+├─ lang/
+│  ├─ en.json
+│  └─ es.json
+├─ scripts/
+│  └─ dnd5e-death-token-effects.js
+├─ CHANGELOG.md
+├─ DEVELOPER.md
+├─ LICENSE
+├─ README.en.md
+├─ README.md
+└─ module.json
+```
+
+---
+
+## 📜 Changelog
+
+Consulta **CHANGELOG.md**.
+
+---
+
+## 📜 Licencia
+
+Este módulo se distribuye bajo la licencia indicada en **LICENSE**.
+
+---
+
+## 👤 Autor
 
 ```text
 foundryvtt-sinregistrar

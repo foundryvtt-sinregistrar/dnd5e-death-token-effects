@@ -1,0 +1,16 @@
+# Excluir del ZIP de release (git archive)
+.gitignore           export-ignore
+.gitattributes       export-ignore
+.github/             export-ignore
+.idea/               export-ignore
+.vscode/             export-ignore
+dev-tools/           export-ignore
+dist/                export-ignore
+_release-zip/        export-ignore
+DEVELOPER.md         export-ignore
+_toDoo.md            export-ignore
+
+# Docs are intentionally kept in the ZIP
+# README.md          export-ignore
+# README.en.md       export-ignore
+# CHANGELOG.md       export-ignore
