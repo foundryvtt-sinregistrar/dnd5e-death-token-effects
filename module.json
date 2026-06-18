@@ -1,0 +1,32 @@
+{
+  "id": "dnd5e-death-token-effects",
+  "title": "D&D5e Death Token Effects",
+  "description": "Displays the D&D 5e death icon on the token based on death saving throws and applies the ‘Dead’ status when 3 failures are reached.",
+  "version": "1.14.0",
+  "authors": [
+    {
+      "name": "foundryvtt-sinregistrar"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.363"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {}
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/dnd5e-death-token-effects.js"
+  ],
+  "url": "https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects",
+  "manifest": "https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest/download/module.json",
+  "download": "https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest/download/dnd5e-death-token-effects.zip",
+  "readme": "https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/blob/main/README.md",
+  "license": "https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/blob/main/LICENSE"
+}
