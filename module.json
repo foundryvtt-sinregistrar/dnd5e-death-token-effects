@@ -1,7 +1,7 @@
 {
   "id": "dnd5e-death-token-effects",
-  "title": "DND5EDEATH.module.name",
-  "description": "DND5EDEATH.module.description",
+  "title": "D&D5e Death Token Effects",
+  "description": "Displays a configurable D&D5e death icon and red border on tokens based on death saving throw failures, with optional automatic Dead/Bloodied status handling.",
   "version": "1.14.0",
   "authors": [
     {
