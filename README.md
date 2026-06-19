@@ -4,6 +4,10 @@
 ![Foundry verified 14.363](https://img.shields.io/badge/Verified-14.363-blue)
 ![System dnd5e](https://img.shields.io/badge/System-dnd5e-orange)
 ![License MIT](https://img.shields.io/badge/License-MIT-lightgrey)
+[![Latest Release](https://img.shields.io/github/v/release/foundryvtt-sinregistrar/dnd5e-death-token-effects?label=release)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
+[![Downloads Latest Release](https://img.shields.io/github/downloads/foundryvtt-sinregistrar/dnd5e-death-token-effects/latest/total?label=descargas%20%C3%BAltima%20release)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
+[![Downloads Total](https://img.shields.io/github/downloads/foundryvtt-sinregistrar/dnd5e-death-token-effects/total?label=descargas%20totales)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases)
+
 
 Módulo para **Foundry VTT 14** y el sistema **D&D5e**.
 
