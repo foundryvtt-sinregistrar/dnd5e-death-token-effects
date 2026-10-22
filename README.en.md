@@ -1,5 +1,9 @@
 # D&D5e Death Token Effects
 
+<p align="center">
+  <img src="docs/foundry/assets/banner-death-token-effects.webp" alt="D&amp;D5e Death Token Effects">
+</p>
+
 **Current version — Foundry v14**
 
 ![Foundry v14](https://img.shields.io/badge/Foundry-v14-green)
