@@ -1,162 +1,91 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-"""
-build_release.py — Build a clean FoundryVTT module ZIP using `git archive`.
-
-Key points:
-- Reads `id` + `version` from module.json (repo root)
-- Generates a ZIP from HEAD (committed content), not from the working tree
-- Respects `.gitattributes` rules (export-ignore) automatically
-- Writes output into ./dist/ by default
-- Optionally fails if working tree is dirty (recommended for releases)
-
-Usage:
--Uso recomendado (release “limpia”)
-  python dev-tools/buildScripts/build_release.py
-
--Uso solo el versionado
-  python dev-tools/buildScripts/build_release.py --no-alias
-
-  python dev-tools/buildScripts/build_release.py --dist dist --ref HEAD
-
-- Si estás en develop con cambios locales y quieres probar igual
-  python dev-tools/buildScripts/build_release.py --allow-dirty
-
-  python dev-tools/buildScripts/build_release.py --name translate-dnd5e-sdr2-es
-
-Extra:
-- Also creates a non-versioned alias ZIP: <id>.zip (same content as the versioned one)
-"""
+"""Build verified Foundry VTT release assets from a committed Git ref."""
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import shutil
 import subprocess
 import sys
+import zipfile
 from pathlib import Path
 
 
-def run(cmd: list[str], cwd: Path, capture: bool = True) -> str:
-    p = subprocess.run(
-        cmd,
-        cwd=str(cwd),
-        check=True,
-        text=True,
-        stdout=subprocess.PIPE if capture else None,
-        stderr=subprocess.PIPE if capture else None,
-    )
-    return (p.stdout or "").strip()
+def run(command: list[str], cwd: Path) -> str:
+    result = subprocess.run(command, cwd=cwd, check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    return result.stdout.strip()
 
 
-def git_repo_root(start: Path) -> Path:
-    try:
-        out = run(["git", "rev-parse", "--show-toplevel"], cwd=start)
-        return Path(out).resolve()
-    except Exception as e:
-        raise RuntimeError("No parece un repo Git (o Git no está disponible).") from e
+def repository_root(start: Path) -> Path:
+    return Path(run(["git", "rev-parse", "--show-toplevel"], start)).resolve()
 
 
-def ensure_clean_worktree(repo_root: Path) -> None:
-    status = run(["git", "status", "--porcelain"], cwd=repo_root)
-    if status.strip():
-        raise RuntimeError(
-            "Working tree no está limpio (hay cambios sin commitear). "
-            "Haz commit/stash, o usa --allow-dirty si quieres continuar."
-        )
+def ensure_clean_worktree(root: Path) -> None:
+    if run(["git", "status", "--porcelain"], root):
+        raise RuntimeError("El arbol de trabajo contiene cambios. Haz commit o usa --allow-dirty.")
 
 
-def load_module_meta(module_json_path: Path) -> tuple[str, str]:
-    if not module_json_path.exists():
-        raise FileNotFoundError(f"No existe: {module_json_path}")
-
-    with module_json_path.open("r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    mod_id = str(data.get("id", "")).strip()
+def load_manifest(root: Path, ref: str) -> tuple[dict, str, str]:
+    source = run(["git", "show", f"{ref}:module.json"], root)
+    data = json.loads(source)
+    module_id = str(data.get("id", "")).strip()
     version = str(data.get("version", "")).strip()
-
-    if not mod_id:
-        raise ValueError("module.json no contiene 'id'.")
-    if not version:
-        raise ValueError("module.json no contiene 'version'.")
-
-    return mod_id, version
+    if not module_id or not version:
+        raise ValueError("module.json debe contener id y version.")
+    return data, module_id, version
 
 
-def build_zip(repo_root: Path, ref: str, zip_path: Path, prefix: str) -> None:
-    zip_path.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run(
-        ["git", "archive", "--format=zip", f"--prefix={prefix}/", "-o", str(zip_path), ref],
-        cwd=str(repo_root),
-        check=True,
-    )
+def archive(root: Path, ref: str, destination: Path, prefix: str) -> None:
+    subprocess.run(["git", "archive", "--format=zip", f"--prefix={prefix}/", "-o", str(destination), ref], cwd=root, check=True)
+
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def verify_archive(path: Path, module_id: str) -> None:
+    required = {f"{module_id}/module.json", f"{module_id}/scripts/dnd5e-death-token-effects.js"}
+    with zipfile.ZipFile(path) as package:
+        names = set(package.namelist())
+    missing = required - names
+    if missing:
+        raise ValueError(f"El ZIP no contiene los archivos requeridos: {', '.join(sorted(missing))}")
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Build a clean FoundryVTT module ZIP using git archive.")
-    ap.add_argument("--dist", default="dist", help="Directorio de salida (relativo al repo root).")
-    ap.add_argument("--ref", default="HEAD", help="Git ref a empaquetar (HEAD, tag, commit, etc.).")
-    ap.add_argument("--name", default="", help="Nombre base del ZIP (si vacío usa module.json:id).")
-    ap.add_argument(
-        "--allow-dirty",
-        action="store_true",
-        help="Permite generar el ZIP aunque haya cambios sin commitear.",
-    )
-    ap.add_argument(
-        "--no-alias",
-        action="store_true",
-        help="No genera el ZIP adicional sin versión (<id>.zip).",
-    )
-
-    args = ap.parse_args()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--dist", default="dist", help="Directorio de salida.")
+    parser.add_argument("--ref", default="HEAD", help="Commit o tag que se empaqueta.")
+    parser.add_argument("--allow-dirty", action="store_true")
+    parser.add_argument("--release-tag", default="", help="Etiqueta esperada, por ejemplo v1.14.2.")
+    args = parser.parse_args()
 
     try:
-        repo_root = git_repo_root(Path.cwd())
-        module_json = repo_root / "module.json"
-        mod_id, version = load_module_meta(module_json)
-
+        root = repository_root(Path.cwd())
         if not args.allow_dirty:
-            ensure_clean_worktree(repo_root)
+            ensure_clean_worktree(root)
+        manifest, module_id, version = load_manifest(root, args.ref)
+        if args.release_tag and args.release_tag != f"v{version}":
+            raise ValueError(f"La etiqueta {args.release_tag!r} no coincide con v{version}.")
 
-        base_name = args.name.strip() if args.name.strip() else mod_id
-        dist_dir = (repo_root / args.dist).resolve()
-        dist_dir.mkdir(parents=True, exist_ok=True)
-
-        # 1) Versioned ZIP: <id>-<version>.zip
-        zip_versioned = dist_dir / f"{base_name}-{version}.zip"
-        build_zip(repo_root=repo_root, ref=args.ref, zip_path=zip_versioned, prefix=base_name)
-
-        # 2) Alias ZIP: <id>.zip (same content)
-        zip_alias = dist_dir / f"{base_name}.zip"
-        if not args.no_alias:
-            build_zip(repo_root=repo_root, ref=args.ref, zip_path=zip_alias, prefix=base_name)
-
-        # Print result
-        def print_zip(p: Path, label: str) -> None:
-            size_mb = p.stat().st_size / (1024 * 1024)
-            print(f"{label}: {p}  ({size_mb:.2f} MB)")
-
-        print_zip(zip_versioned, "OK (versioned)")
-        if not args.no_alias:
-            print_zip(zip_alias, "OK (alias)")
-        print(f"Ref: {args.ref}")
-        print(f"Prefix: {base_name}/")
+        output = (root / args.dist).resolve()
+        output.mkdir(parents=True, exist_ok=True)
+        versioned = output / f"{module_id}-{version}.zip"
+        alias = output / f"{module_id}.zip"
+        archive(root, args.ref, versioned, module_id)
+        shutil.copyfile(versioned, alias)
+        verify_archive(versioned, module_id)
+        (output / "module.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        (output / "SHA256SUMS.txt").write_text(
+            f"{sha256(alias)}  {alias.name}\n{sha256(versioned)}  {versioned.name}\n",
+            encoding="utf-8",
+        )
+        print(f"OK: {alias}\nOK: {versioned}\nOK: {output / 'module.json'}\nOK: {output / 'SHA256SUMS.txt'}\nRef: {args.ref}")
         return 0
-
-    except subprocess.CalledProcessError as e:
-        err = ""
-        try:
-            err = e.stderr.decode() if isinstance(e.stderr, (bytes, bytearray)) else (e.stderr or "")
-        except Exception:
-            err = ""
-        msg = err.strip() or str(e)
-        print(f"ERROR (git): {msg}", file=sys.stderr)
-        return 2
-
-    except Exception as e:
-        print(f"ERROR: {e}", file=sys.stderr)
+    except (subprocess.CalledProcessError, OSError, ValueError, json.JSONDecodeError) as error:
+        print(f"ERROR: {error}", file=sys.stderr)
         return 1
 
 

@@ -6,49 +6,50 @@ on:
       - "v*"
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  build:
+  release:
+    name: Validate, package, and draft release
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: "3.x"
-
-      - name: Validate module version matches tag
-        shell: bash
+          node-version: "24"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate source and behavior
         run: |
-          TAG_VERSION="${GITHUB_REF_NAME#v}"
-          MODULE_VERSION="$(python - <<'PY'
-          import json
-          with open('module.json', encoding='utf-8') as f:
-              print(json.load(f)['version'])
-          PY
-          )"
-          echo "Tag: ${TAG_VERSION}"
-          echo "module.json: ${MODULE_VERSION}"
-          test "${TAG_VERSION}" = "${MODULE_VERSION}"
-
-      - name: Build release ZIP
-        run: python dev-tools/buildScripts/build_release.py
-
-      - name: Create draft release
+          npm run validate
+          npm test
+          npm run test:release
+      - name: Verify tag matches manifest version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          VERSION="$(node -p 'require("./module.json").version')"
+          test "$RELEASE_TAG" = "v$VERSION"
+      - name: Build release assets from tagged commit
+        run: python -B dev-tools/buildScripts/build_release.py --dist dist --ref "$GITHUB_SHA" --release-tag "${{ github.ref_name }}" --allow-dirty
+      - name: Verify release checksums
+        run: (cd dist && sha256sum --check SHA256SUMS.txt)
+      - name: Create draft GitHub release
         uses: softprops/action-gh-release@v2
         with:
           draft: true
           generate_release_notes: true
+          fail_on_unmatched_files: true
           files: |
-            module.json
-            README.md
-            README.en.md
-            CHANGELOG.md
-            LICENSE
             dist/*.zip
+            dist/module.json
+            dist/SHA256SUMS.txt

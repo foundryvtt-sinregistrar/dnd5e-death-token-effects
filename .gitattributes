@@ -1,17 +1,36 @@
-# Excluir del ZIP de release (git archive)
-.gitignore           export-ignore
-.gitattributes       export-ignore
-.github/             export-ignore
-.idea/               export-ignore
-.vscode/             export-ignore
-dev-tools/           export-ignore
-dist/                export-ignore
-_release-zip/        export-ignore
-DEVELOPER.md         export-ignore
-_toDoo.md            export-ignore
-docs/images/**       export-ignore
+# Normalize text files to LF in Git.
+* text=auto
+*.json text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sh text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.editorconfig text eol=lf
 
-# Docs are intentionally kept in the ZIP
-# README.md          export-ignore
-# README.en.md       export-ignore
-# CHANGELOG.md       export-ignore
+# Exclude development-only files from git-archive release packages.
+.gitignore export-ignore
+.gitattributes export-ignore
+.editorconfig export-ignore
+.github/ export-ignore
+.idea/ export-ignore
+.vscode/ export-ignore
+dev-tools/ export-ignore
+tests/ export-ignore
+dist/ export-ignore
+tmp/ export-ignore
+_release-zip/ export-ignore
+.venv/ export-ignore
+node_modules/ export-ignore
+__pycache__/ export-ignore
+.history/ export-ignore
+.ionide/ export-ignore
+.env export-ignore
+.env.* export-ignore
+APPLY.md export-ignore
+DEVELOPER.md export-ignore
+staged.txt export-ignore

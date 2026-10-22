@@ -1,0 +1,40 @@
+name: Validate
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate source and behavior
+        run: |
+          npm run validate
+          npm test
+          npm run test:release
+      - name: Build and verify committed package
+        run: |
+          python -B dev-tools/buildScripts/build_release.py --dist dist --ref "$GITHUB_SHA" --allow-dirty
+          (cd dist && sha256sum --check SHA256SUMS.txt)

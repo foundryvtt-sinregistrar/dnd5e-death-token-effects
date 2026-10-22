@@ -24,6 +24,19 @@ The format is based on **Keep a Changelog**, and this project follows a custom v
 
 ---
 
+## [1.14.2] - 2026-10-22
+
+### Added
+- Continuous validation workflow for pushes and pull requests.
+- Manifest, status-effect, and release-package tests.
+- SHA-256 checksums and a release-local `module.json` for distributable assets.
+
+### Changed
+- Standardized release packaging and GitHub Actions around the tagged commit.
+- Normalized repository text-file settings and excluded internal application notes from release archives.
+
+---
+
 ## [1.14.1] - 2026-10-22
 
 ### Changed
@@ -68,6 +81,7 @@ The format is based on **Keep a Changelog**, and this project follows a custom v
 
 ## Version Links
 
-[Unreleased]: https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/compare/v1.14.1...HEAD
+[Unreleased]: https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/compare/v1.14.2...HEAD
+[1.14.2]: https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/tag/v1.14.2
 [1.14.1]: https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/tag/v1.14.1
 [1.14.0]: https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/tag/v1.14.0
