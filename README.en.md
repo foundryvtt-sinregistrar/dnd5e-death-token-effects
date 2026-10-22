@@ -8,6 +8,7 @@
 
 [![Latest Release](https://img.shields.io/github/v/release/foundryvtt-sinregistrar/dnd5e-death-token-effects?label=release)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
 [![Downloads Latest Release](https://img.shields.io/github/downloads/foundryvtt-sinregistrar/dnd5e-death-token-effects/latest/total?label=latest%20release%20downloads)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
+
 [![Downloads Total](https://img.shields.io/github/downloads/foundryvtt-sinregistrar/dnd5e-death-token-effects/total?label=total%20downloads)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases)
 
 Module for **Foundry VTT 14** and the **D&D5e** system.
