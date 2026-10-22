@@ -11,7 +11,7 @@ The format is based on **Keep a Changelog**, and this project follows a custom v
 
 ---
 
-## [Unreleased]
+## [1.14.4] - 2026-10-22
 
 ### Added
 - —
@@ -20,7 +20,7 @@ The format is based on **Keep a Changelog**, and this project follows a custom v
 - —
 
 ### Fixed
-- —
+- Restored the required alignment between the release tag and the manifest version after the unsuccessful `v1.14.3` release attempt.
 
 ---
 
