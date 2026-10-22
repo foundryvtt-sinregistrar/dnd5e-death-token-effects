@@ -336,7 +336,9 @@ function getStatuses(effectLike) {
 }
 
 function getStatusDefinition(statusKey) {
-  const effects = CONFIG.statusEffects ?? [];
+  // D&D5e 6.0.x replaces Foundry's status-effect array with an object keyed by status ID.
+  // Object.values also preserves compatibility with Foundry's array representation.
+  const effects = Object.values(CONFIG.statusEffects ?? {});
   return effects.find((effect) => {
     const statuses = getStatuses(effect);
     return effect.id === statusKey || effect._id === statusKey || statuses.includes(statusKey);

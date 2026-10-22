@@ -1,7 +1,7 @@
 # 🇪🇸 D&D5e Death Token Effects
 
 ![Foundry v14](https://img.shields.io/badge/Foundry-v14-green)
-![Foundry verified 14.363](https://img.shields.io/badge/Verified-14.363-blue)
+![Foundry verified 14.368](https://img.shields.io/badge/Verified-14.368-blue)
 ![System dnd5e](https://img.shields.io/badge/System-dnd5e-orange)
 ![License MIT](https://img.shields.io/badge/License-MIT-lightgrey)
 
@@ -17,10 +17,10 @@ Muestra el icono de muerte de D&D5e sobre el token cuando un actor está a **0 H
 
 | Elemento | Versión |
 |---|---|
-| Foundry VTT mínimo | `14` |
-| Foundry VTT verificado | `14.363` |
-| Sistema | `dnd5e` |
-| Versión del módulo | `1.14.0` |
+| Foundry VTT mínimo | `14.367` |
+| Foundry VTT verificado | `14.368` |
+| Sistema | `dnd5e` (`6.0.3` mínimo y verificado) |
+| Versión del módulo | `1.14.1` |
 
 ---
 
@@ -200,13 +200,13 @@ python dev-tools/buildScripts/build_release.py --allow-dirty
 
 # Para publicar una release real:
 git add .
-git commit -m "build(release): add release infrastructure"
-git tag v1.14.0
+git commit -m "compat(dnd5e): verify Foundry 14.368 and DnD5e 6.0.3"
+git tag v1.14.1
 git push origin main
-git push origin v1.14.0
+git push origin v1.14.1
 ```
 
-> Si `v1.14.0` ya existe en GitHub, sube la versión a `1.14.1` antes de crear el nuevo tag.
+> La etiqueta debe coincidir exactamente con la versión de `module.json`: para esta release, `v1.14.1`.
 
 ---
 

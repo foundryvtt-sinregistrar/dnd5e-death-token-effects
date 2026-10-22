@@ -24,6 +24,17 @@ The format is based on **Keep a Changelog**, and this project follows a custom v
 
 ---
 
+## [1.14.1] - 2026-10-22
+
+### Changed
+- Declared compatibility with Foundry VTT `14.367` minimum and `14.368` verified.
+- Declared D&D5e `6.0.3` as the minimum and verified system version.
+
+### Fixed
+- Read `CONFIG.statusEffects` correctly when D&D5e 6.0.x provides it as an object keyed by status ID.
+
+---
+
 ## [1.14.0] - 2026-06-18
 
 ### Added
@@ -57,5 +68,6 @@ The format is based on **Keep a Changelog**, and this project follows a custom v
 
 ## Version Links
 
-[Unreleased]: https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/compare/v1.14.0...HEAD
+[Unreleased]: https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/compare/v1.14.1...HEAD
+[1.14.1]: https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/tag/v1.14.1
 [1.14.0]: https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/tag/v1.14.0

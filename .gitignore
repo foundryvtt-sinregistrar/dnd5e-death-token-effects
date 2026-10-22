@@ -1,13 +1,46 @@
-# Ignorar carpetas temporales/locales
-_*/
-_*
-.idea/
-.vscode/
+# Dependencies and local runtimes
+node_modules/
+.tmp-npm-cache/
+__pycache__/
+*.py[cod]
+.venv/
 
-# Release output
-dist/
-_release-zip/
+# Generated distribution artifacts and temporary release files
+/dist/
+/tmp/
+/_release-zip/
+/staged.txt
 
-# OS
+# Local sources and reports
+/dev-tools/export/data/*
+!/dev-tools/export/data/.gitkeep
+/dev-tools/export/_data/
+/dev-tools/_[Ii]nformes/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# IDE and editor state; retain shareable project settings
+/.idea/*
+!/.idea/codeStyles/
+!/.idea/runConfigurations/
+/.vscode/*
+!/.vscode/settings.json
+!/.vscode/tasks.json
+!/.vscode/launch.json
+!/.vscode/extensions.json
+!/.vscode/*.code-snippets
+.history/
+.ionide/
+
+# Operating-system files
 .DS_Store
 Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.stackdump
