@@ -1,9 +1,11 @@
-# 🇬🇧 D&D5e Death Token Effects
+# D&D5e Death Token Effects
+
+**Current version — Foundry v14**
 
 ![Foundry v14](https://img.shields.io/badge/Foundry-v14-green)
 ![Foundry verified 14.368](https://img.shields.io/badge/Verified-14.368-blue)
-![System dnd5e](https://img.shields.io/badge/System-dnd5e-orange)
-![License MIT](https://img.shields.io/badge/License-MIT-lightgrey)
+![System dnd5e 6.0.3](https://img.shields.io/badge/dnd5e-6.0.3-blue)
+
 [![Latest Release](https://img.shields.io/github/v/release/foundryvtt-sinregistrar/dnd5e-death-token-effects?label=release)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
 [![Downloads Latest Release](https://img.shields.io/github/downloads/foundryvtt-sinregistrar/dnd5e-death-token-effects/latest/total?label=latest%20release%20downloads)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
 [![Downloads Total](https://img.shields.io/github/downloads/foundryvtt-sinregistrar/dnd5e-death-token-effects/total?label=total%20downloads)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases)
