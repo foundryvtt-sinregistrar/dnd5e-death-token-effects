@@ -11,6 +11,14 @@ The format is based on **Keep a Changelog**, and this project follows a custom v
 
 ---
 
+## [1.14.5] - 2026-10-27
+
+### Changed
+- Verified compatibility with Foundry VTT 14.369 and D&D5e 6.0.6.
+
+### Fixed
+- Validated the death overlay on a token at 0 HP with three failed death saves.
+
 ## [1.14.4] - 2026-10-22
 
 ### Added

@@ -2,7 +2,7 @@
   "id": "dnd5e-death-token-effects",
   "title": "D&D5e — Death Token Effects",
   "description": "Displays a configurable D&D5e death icon and red border on tokens based on death saving throw failures, with optional automatic Dead/Bloodied status handling.",
-  "version": "1.14.4",
+  "version": "1.14.5",
   "authors": [
     {
       "name": "foundryvtt-sinregistrar"
@@ -10,7 +10,7 @@
   ],
   "compatibility": {
     "minimum": "14.367",
-    "verified": "14.368"
+    "verified": "14.369"
   },
   "relationships": {
     "systems": [

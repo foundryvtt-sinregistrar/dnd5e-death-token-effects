@@ -99,5 +99,5 @@ feat(settings): add configurable death overlay color
 fix(status): prevent duplicate dead active effects
 build(release): add release packaging workflow
 docs(readme): document manifest installation
-compat(foundry14): verify module against Foundry 14.368
+compat(foundry14): verify module against Foundry 14.369
 ```

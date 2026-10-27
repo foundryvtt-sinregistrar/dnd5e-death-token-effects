@@ -20,11 +20,11 @@ if (manifest.download !== `${manifest.url}/releases/latest/download/${moduleId}.
   throw new Error("La descarga debe apuntar al ZIP alias de la ultima release.");
 }
 if (!manifest.esmodules.includes("scripts/dnd5e-death-token-effects.js")) throw new Error("Falta el punto de entrada del modulo.");
-if (manifest.compatibility.minimum !== "14.367" || manifest.compatibility.verified !== "14.368") {
+if (manifest.compatibility.minimum !== "14.367" || manifest.compatibility.verified !== "14.369") {
   throw new Error("La compatibilidad de Foundry no coincide con la politica del proyecto.");
 }
 const dnd5e = manifest.relationships.systems?.find(({ id }) => id === "dnd5e");
-if (dnd5e?.compatibility?.minimum !== "6.0.3" || dnd5e.compatibility.verified !== "6.0.3") {
+if (dnd5e?.compatibility?.minimum !== "6.0.3" || dnd5e.compatibility.verified !== "6.0.6") {
   throw new Error("La compatibilidad de DnD5e no coincide con la politica del proyecto.");
 }
 for (const { path } of manifest.languages) await readFile(path, "utf8");
