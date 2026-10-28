@@ -5,6 +5,7 @@
 *.mjs text eol=lf
 *.py text eol=lf
 *.md text eol=lf
+*.html text eol=lf
 *.yml text eol=lf
 *.yaml text eol=lf
 *.sh text eol=lf
@@ -20,6 +21,7 @@
 .idea/ export-ignore
 .vscode/ export-ignore
 dev-tools/ export-ignore
+docs/foundry/ export-ignore
 tests/ export-ignore
 dist/ export-ignore
 tmp/ export-ignore

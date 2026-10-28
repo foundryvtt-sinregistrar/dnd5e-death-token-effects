@@ -4,9 +4,15 @@ Este archivo no forma parte del modulo distribuible. La publicacion se realiza d
 commit limpio y una etiqueta que coincida con `module.json`:
 
 ```bash
+python -m pip install Pillow
+python -B dev-tools/buildScripts/generate_foundry_banner.py --output-dir dist
 python dev-tools/buildScripts/build_release.py
 git tag v<version>
 git push origin main --follow-tags
 ```
+
+El workflow de la etiqueta vuelve a generar el banner y adjunta tanto el archivo
+versionado como el alias de la release mÃ¡s reciente. Consulta `docs/foundry/README.md`
+para la URL estable que debe usarse en la descripciÃ³n del paquete.
 
 GitHub Actions valida el commit etiquetado, crea los ZIP y abre una release draft.

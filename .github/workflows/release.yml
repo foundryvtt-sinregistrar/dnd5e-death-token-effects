@@ -28,6 +28,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Install presentation dependency
+        run: python -m pip install --disable-pip-version-check Pillow
       - name: Validate source and behavior
         run: |
           npm run validate
@@ -41,6 +43,8 @@ jobs:
           test "$RELEASE_TAG" = "v$VERSION"
       - name: Build release assets from tagged commit
         run: python -B dev-tools/buildScripts/build_release.py --dist dist --ref "$GITHUB_SHA" --release-tag "${{ github.ref_name }}" --allow-dirty
+      - name: Render release banner
+        run: python -B dev-tools/buildScripts/generate_foundry_banner.py --manifest module.json --output-dir dist
       - name: Verify release checksums
         run: (cd dist && sha256sum --check SHA256SUMS.txt)
       - name: Create draft GitHub release
@@ -53,3 +57,5 @@ jobs:
             dist/*.zip
             dist/module.json
             dist/SHA256SUMS.txt
+            dist/*-banner.webp
+            dist/banner-death-token-effects.webp

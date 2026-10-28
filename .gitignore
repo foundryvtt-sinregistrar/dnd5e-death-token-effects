@@ -8,6 +8,7 @@ __pycache__/
 # Generated distribution artifacts and temporary release files
 /dist/
 /tmp/
+/.tmp/
 /_release-zip/
 /staged.txt
 

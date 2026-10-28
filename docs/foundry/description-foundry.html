@@ -1,0 +1,94 @@
+<!-- Paste this complete file into Foundry's Description source mode (<>). -->
+<div class="dnd5e-death-token-description">
+  <p style="text-align:center">
+    <img style="width:100%;max-width:1600px;height:auto" src="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest/download/banner-death-token-effects.webp" alt="D&amp;D5e Death Token Effects — visual death-save effects" />
+  </p>
+  <p style="text-align:center">
+    <a href="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest" target="_blank" rel="nofollow noopener"><img src="https://img.shields.io/github/v/release/foundryvtt-sinregistrar/dnd5e-death-token-effects?label=release" alt="Latest release" /></a>
+    <img src="https://img.shields.io/badge/Foundry-14.367%2B-2f855a" alt="Foundry 14.367+" />
+    <img src="https://img.shields.io/badge/Verified-14.369-2563eb" alt="Foundry verified 14.369" />
+    <img src="https://img.shields.io/badge/dnd5e-6.0.3%2B-654b75" alt="D&amp;D5e 6.0.3+" />
+    <img src="https://img.shields.io/badge/Verified-6.0.6-2563eb" alt="D&amp;D5e verified 6.0.6" />
+    <img src="https://img.shields.io/badge/languages-English%20%7C%20Espa%C3%B1ol-687b8f" alt="English and Spanish" />
+  </p>
+  <p style="text-align:center">
+    <a href="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects" target="_blank" rel="nofollow noopener">GitHub</a> &middot;
+    <a href="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest" target="_blank" rel="nofollow noopener">Releases</a> &middot;
+    <a href="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/issues" target="_blank" rel="nofollow noopener">Issues / Incidencias</a> &middot;
+    <a href="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest/download/module.json" target="_blank" rel="nofollow noopener">Manifest URL</a>
+  </p>
+  <hr />
+
+  <h2>English</h2>
+  <p><strong>See death-saving throw failures on the battlefield.</strong> D&amp;D5e Death Token Effects displays a configurable death icon and red token border when a character reaches 0 HP. The icon opacity increases as failed death saving throws accumulate.</p>
+  <h3>Key features</h3>
+  <ul>
+    <li>Progressive overlay opacity for 1, 2, and 3+ failed death saving throws.</li>
+    <li>Optional faint indicator at 0 HP with no failures.</li>
+    <li>Customizable icon image, tint, opacity, and size; the original token image is never replaced.</li>
+    <li>Lower-right visual overlay and configurable red token border.</li>
+    <li>Optional automatic <strong>Dead</strong> status at 3+ failures, with optional removal of <strong>Bloodied</strong>.</li>
+    <li>Optional removal of <strong>Dead</strong> when the actor is healed above 0 HP; disabled by default.</li>
+    <li>Non-interactive graphics and automatic updates when actor data changes.</li>
+  </ul>
+  <h3>How it works</h3>
+  <p><strong>HP &gt; 0:</strong> no death overlay. <strong>0 HP, 0 failures:</strong> hidden by default. <strong>1 failure:</strong> low opacity (25% by default). <strong>2 failures:</strong> medium opacity (50%). <strong>3+ failures:</strong> high opacity (80%) and optional Dead status handling.</p>
+  <p><small>The red and blue d20s in the banner are symbolic. The module visualizes <strong>failed</strong> death saves; it does not roll or modify saving throws.</small></p>
+  <h3>Requirements and installation</h3>
+  <p>Foundry VTT <strong>14.367+</strong> (verified 14.369) &middot; D&amp;D 5e <strong>6.0.3+</strong> (verified 6.0.6).</p>
+  <ol>
+    <li>Open <strong>Add-on Modules &rarr; Install Module</strong> in Foundry.</li>
+    <li>Find the module, or paste its <a href="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest/download/module.json" target="_blank" rel="nofollow noopener">manifest URL</a>.</li>
+    <li>Enable the module in your D&amp;D5e world.</li>
+    <li>Adjust <strong>Configure Settings &rarr; Module Settings &rarr; D&amp;D5e Death Token Effects</strong>.</li>
+  </ol>
+  <hr />
+
+  <h2>Espa&ntilde;ol</h2>
+  <p><strong>Visualiza los fallos de las salvaciones contra muerte en el tablero.</strong> D&amp;D5e Death Token Effects muestra un icono de muerte configurable y un borde rojo alrededor del token cuando un personaje llega a 0 puntos de golpe. La opacidad del icono aumenta seg&uacute;n los fallos acumulados.</p>
+  <h3>Caracter&iacute;sticas</h3>
+  <ul>
+    <li>Opacidad progresiva del icono con 1, 2 y 3 o m&aacute;s fallos de salvaci&oacute;n de muerte.</li>
+    <li>Indicador tenue opcional con 0 PG y ning&uacute;n fallo.</li>
+    <li>Personalizaci&oacute;n de imagen, color, opacidad y tama&ntilde;o sin sustituir la imagen original del token.</li>
+    <li>Icono en la esquina inferior derecha y borde rojo configurable.</li>
+    <li>Estado <strong>Muerto</strong> opcional con 3+ fallos y eliminaci&oacute;n opcional de <strong>Ensangrentado</strong>.</li>
+    <li>Eliminaci&oacute;n opcional de <strong>Muerto</strong> al curarse por encima de 0 PG; desactivada por defecto.</li>
+    <li>Gr&aacute;ficos no interactivos y actualizaci&oacute;n autom&aacute;tica al cambiar los datos del actor.</li>
+  </ul>
+  <h3>Funcionamiento</h3>
+  <p><strong>PG &gt; 0:</strong> sin icono. <strong>0 PG, 0 fallos:</strong> oculto por defecto. <strong>1 fallo:</strong> opacidad baja (25% por defecto). <strong>2 fallos:</strong> opacidad media (50%). <strong>3 o m&aacute;s fallos:</strong> opacidad alta (80%) y gesti&oacute;n opcional del estado Muerto.</p>
+  <p><small>Los d20 rojo y azul del banner son ilustrativos. El m&oacute;dulo representa los <strong>fallos</strong> de salvaci&oacute;n de muerte; no efect&uacute;a ni modifica tiradas.</small></p>
+  <h3>Requisitos e instalaci&oacute;n</h3>
+  <p>Foundry VTT <strong>14.367+</strong> (verificada 14.369) &middot; D&amp;D 5e <strong>6.0.3+</strong> (verificada 6.0.6).</p>
+  <ol>
+    <li>En Foundry, abre <strong>Add-on Modules &rarr; Install Module</strong>.</li>
+    <li>Busca el m&oacute;dulo o pega su <a href="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest/download/module.json" target="_blank" rel="nofollow noopener">URL del manifiesto</a>.</li>
+    <li>Act&iacute;valo en tu mundo D&amp;D5e.</li>
+    <li>Config&uacute;ralo en <strong>Configure Settings &rarr; Module Settings &rarr; D&amp;D5e Death Token Effects</strong>.</li>
+  </ol>
+  <hr />
+
+  <h2>Screenshots / Capturas de pantalla</h2>
+  <p>Click to enlarge / Pulsa para ampliar.</p>
+  <table style="width:100%"><tbody>
+    <tr>
+      <td style="width:50%;text-align:center"><a href="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/01-full-hp.png" target="_blank" rel="nofollow noopener"><img style="width:100%;max-width:380px" src="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/01-full-hp.png" alt="Full HP / Vida completa" /></a><p><strong>Full HP</strong> / Vida completa</p></td>
+      <td style="width:50%;text-align:center"><a href="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/02-half-hp.png" target="_blank" rel="nofollow noopener"><img style="width:100%;max-width:380px" src="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/02-half-hp.png" alt="Half HP / Mitad de vida" /></a><p><strong>Half HP</strong> / Mitad de vida</p></td>
+    </tr>
+    <tr>
+      <td style="width:50%;text-align:center"><a href="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/03-one-hp.png" target="_blank" rel="nofollow noopener"><img style="width:100%;max-width:380px" src="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/03-one-hp.png" alt="1 HP / 1 PG" /></a><p><strong>1 HP</strong> / 1 PG</p></td>
+      <td style="width:50%;text-align:center"><a href="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/04-zero-hp-dying.png" target="_blank" rel="nofollow noopener"><img style="width:100%;max-width:380px" src="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/04-zero-hp-dying.png" alt="0 HP / 0 PG" /></a><p><strong>0 HP</strong> / 0 PG</p></td>
+    </tr>
+    <tr>
+      <td style="width:50%;text-align:center"><a href="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/05-death-save-failure-1.png" target="_blank" rel="nofollow noopener"><img style="width:100%;max-width:380px" src="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/05-death-save-failure-1.png" alt="1 failed save / 1 fallo" /></a><p><strong>1 failed save</strong> / 1 fallo</p></td>
+      <td style="width:50%;text-align:center"><a href="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/06-death-save-failure-2.png" target="_blank" rel="nofollow noopener"><img style="width:100%;max-width:380px" src="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/06-death-save-failure-2.png" alt="2 failed saves / 2 fallos" /></a><p><strong>2 failed saves</strong> / 2 fallos</p></td>
+    </tr>
+    <tr>
+      <td style="width:50%;text-align:center"><a href="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/07-death-save-failure-3-dead.png" target="_blank" rel="nofollow noopener"><img style="width:100%;max-width:380px" src="https://raw.githubusercontent.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/main/docs/images/status-demo/07-death-save-failure-3-dead.png" alt="Dead / Muerto" /></a><p><strong>3 failed saves &middot; Dead</strong> / 3 fallos &middot; Muerto</p></td>
+      <td style="width:50%">&nbsp;</td>
+    </tr>
+  </tbody></table>
+  <h2>Support / Soporte</h2>
+  <p><a href="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects" target="_blank" rel="nofollow noopener">GitHub / Repositorio</a> &middot; <a href="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/issues" target="_blank" rel="nofollow noopener">Issues / Incidencias</a> &middot; <a href="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases" target="_blank" rel="nofollow noopener">Releases / Versiones</a> &middot; <a href="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/blob/main/LICENSE" target="_blank" rel="nofollow noopener">MIT License / Licencia MIT</a></p>
+</div>
