@@ -11,6 +11,8 @@ The format is based on **Keep a Changelog**, and this project follows a custom v
 
 ---
 
+## [Unreleased]
+
 ## [1.14.5] - 2026-10-27
 
 ### Changed

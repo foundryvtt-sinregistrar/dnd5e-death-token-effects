@@ -1,5 +1,7 @@
 # D&D5e Death Token Effects
 
+**Español** | [English](README.en.md)
+
 <p align="center">
   <img src="docs/foundry/assets/banner-death-token-effects.webp" alt="D&amp;D5e Death Token Effects">
 </p>
@@ -7,7 +9,7 @@
 **Versión actual — Foundry v14**
 
 ![Foundry v14](https://img.shields.io/badge/Foundry-v14-green)
-![Foundry verified 14.368](https://img.shields.io/badge/Verified-14.368-blue)
+![Foundry verified 14.369](https://img.shields.io/badge/Verified-14.369-blue)
 ![System dnd5e 6.0.3](https://img.shields.io/badge/dnd5e-6.0.3-blue)
 
 [![Latest Release](https://img.shields.io/github/v/release/foundryvtt-sinregistrar/dnd5e-death-token-effects?label=release)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
@@ -23,18 +25,18 @@ Muestra el icono de muerte de D&D5e sobre el token cuando un actor está a **0 H
 
 ---
 
-## 📦 Compatibilidad
+## Estado
 
 | Elemento | Versión |
 |---|---|
 | Foundry VTT mínimo | `14.367` |
-| Foundry VTT verificado | `14.368` |
+| Foundry VTT verificado | `14.369` |
 | Sistema | `dnd5e` (`6.0.3` mínimo y verificado) |
-| Versión del módulo | `1.14.2` |
+| Versión del módulo | `1.14.5` |
 
 ---
 
-## 🧭 Criterio de versionado
+## Desarrollo: criterio de versionado
 
 Este módulo usa el segundo número de la versión como referencia a la versión mayor de **Foundry VTT** compatible.
 
@@ -54,7 +56,7 @@ Este módulo usa el segundo número de la versión como referencia a la versión
 
 ---
 
-## ✅ Qué hace
+## Activación y uso
 
 ```text
 HP > 0
@@ -77,7 +79,7 @@ HP <= 0 y 3+ fallos de muerte
 ```
 ---
 
-## Vista previa
+## Contenido incluido: vista previa
 
 | Estado | Captura |
 |---|---|
@@ -92,7 +94,7 @@ HP <= 0 y 3+ fallos de muerte
 
 ---
 
-## 🎨 Características visuales
+## Contenido incluido: características visuales
 
 El módulo:
 
@@ -107,7 +109,7 @@ El módulo:
 
 ---
 
-## ⚙️ Configuración
+## Configuración
 
 Ve a:
 
@@ -134,7 +136,7 @@ Opciones principales:
 
 ---
 
-## 🧩 Rutas de D&D5e usadas
+## Desarrollo: rutas de D&D5e usadas
 
 ```text
 system.attributes.hp.value
@@ -193,7 +195,7 @@ C:\docker\foundryvtt\foundryvtt-14\data\Data\modules\dnd5e-death-token-effects
 
 ---
 
-## 🏗️ Release / Publicación
+## Desarrollo: publicación
 
 Este proyecto incluye una infraestructura de release similar al otro módulo:
 
@@ -208,19 +210,19 @@ Flujo recomendado:
 git status
 python dev-tools/buildScripts/build_release.py --allow-dirty
 
-# Para publicar una release real:
+### Para publicar una versión real
 git add .
 git commit -m "build(release): standardize validation and packaging"
-git tag v1.14.2
+git tag v1.14.5
 git push origin main
-git push origin v1.14.2
+git push origin v1.14.5
 ```
 
-> La etiqueta debe coincidir exactamente con la versión de `module.json`: para esta release, `v1.14.2`.
+> La etiqueta debe coincidir exactamente con la versión de `module.json`: para esta release, `v1.14.5`.
 
 ---
 
-## 📂 Estructura
+## Desarrollo: estructura
 
 ```text
 dnd5e-death-token-effects/
@@ -245,19 +247,19 @@ dnd5e-death-token-effects/
 
 ---
 
-## 📜 Changelog
+## Actualización
 
 Consulta **CHANGELOG.md**.
 
 ---
 
-## 📜 Licencia
+## Licencia y créditos
 
 Este módulo se distribuye bajo la licencia indicada en **LICENSE**.
 
 ---
 
-## 👤 Autor
+## Soporte y contribuciones
 
 ```text
 foundryvtt-sinregistrar

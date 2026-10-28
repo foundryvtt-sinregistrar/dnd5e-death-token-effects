@@ -1,5 +1,7 @@
 # D&D5e Death Token Effects
 
+[Español](README.md) | **English**
+
 <p align="center">
   <img src="docs/foundry/assets/banner-death-token-effects.webp" alt="D&amp;D5e Death Token Effects">
 </p>
@@ -7,7 +9,7 @@
 **Current version — Foundry v14**
 
 ![Foundry v14](https://img.shields.io/badge/Foundry-v14-green)
-![Foundry verified 14.368](https://img.shields.io/badge/Verified-14.368-blue)
+![Foundry verified 14.369](https://img.shields.io/badge/Verified-14.369-blue)
 ![System dnd5e 6.0.3](https://img.shields.io/badge/dnd5e-6.0.3-blue)
 
 [![Latest Release](https://img.shields.io/github/v/release/foundryvtt-sinregistrar/dnd5e-death-token-effects?label=release)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
@@ -21,18 +23,18 @@ It displays the D&D5e death icon over the token when an actor is at **0 HP** and
 
 ---
 
-## 📦 Compatibility
+## Status
 
 | Item | Version |
 |---|---|
 | Minimum Foundry VTT | `14.367` |
-| Verified Foundry VTT | `14.368` |
+| Verified Foundry VTT | `14.369` |
 | System | `dnd5e` (`6.0.3` minimum and verified) |
-| Module version | `1.14.2` |
+| Module version | `1.14.5` |
 
 ---
 
-## 🧭 Versioning
+## Development: versioning
 
 This module uses the second version number as the target **Foundry VTT major version**.
 
@@ -52,7 +54,7 @@ This module uses the second version number as the target **Foundry VTT major ver
 
 ---
 
-## ✅ Behavior
+## Activation and use
 
 ```text
 HP > 0
@@ -75,7 +77,7 @@ HP <= 0 and 3+ death failures
 ```
 ---
 
-## Preview
+## Included content: preview
 
 | State | Screenshot |
 |---|---|
@@ -89,7 +91,7 @@ HP <= 0 and 3+ death failures
 
 ---
 
-## 🎨 Visual features
+## Included content: visual features
 
 The module:
 
@@ -104,7 +106,7 @@ The module:
 
 ---
 
-## ⚙️ Settings
+## Settings
 
 Go to:
 
@@ -131,7 +133,7 @@ Main options:
 
 ---
 
-## 🧩 D&D5e data paths
+## Development: D&D5e data paths
 
 ```text
 system.attributes.hp.value
@@ -184,7 +186,7 @@ FoundryVTT/Data/modules/
 
 ---
 
-## 🏗️ Release workflow
+## Development: release workflow
 
 This project includes the same release-style infrastructure as the other module:
 
@@ -199,31 +201,31 @@ Recommended flow:
 git status
 python dev-tools/buildScripts/build_release.py --allow-dirty
 
-# For a real release:
+### For a real release
 git add .
 git commit -m "build(release): standardize validation and packaging"
-git tag v1.14.2
+git tag v1.14.5
 git push origin main
-git push origin v1.14.2
+git push origin v1.14.5
 ```
 
-> The tag must match the `module.json` version exactly: for this release, `v1.14.2`.
+> The tag must match the `module.json` version exactly: for this release, `v1.14.5`.
 
 ---
 
-## 📜 Changelog
+## Updating
 
 See **CHANGELOG.md**.
 
 ---
 
-## 📜 License
+## License and credits
 
 This module is distributed under the license specified in **LICENSE**.
 
 ---
 
-## 👤 Author
+## Support and contributions
 
 ```text
 foundryvtt-sinregistrar
