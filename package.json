@@ -6,6 +6,8 @@
     "test": "node --test tests/*.test.mjs",
     "test:release": "python -B -m unittest tests.test_build_release -v",
     "build:release": "python -B dev-tools/buildScripts/build_release.py",
-    "build:banner": "python -B dev-tools/buildScripts/generate_foundry_banner.py --output-dir dist"
+    "build:banner": "python -B dev-tools/buildScripts/generate_foundry_banner.py --output-dir dist",
+    "build:description": "python -B dev-tools/buildScripts/generate_foundry_description.py",
+    "build:notes": "python -B dev-tools/buildScripts/generate_release_notes.py --output dist/release-notes.md"
   }
 }

@@ -15,9 +15,9 @@ banner without another description edit:
 <img style="width: 100%; max-width: 1600px;" src="https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest/download/banner-death-token-effects.webp" alt="D&amp;D5e Death Token Effects — visual death-save effects" />
 ```
 
-The banner renderer reads the module version plus the verified Foundry and D&D5e
-versions from `module.json`. It overlays that release data only in the lower-left
-metadata panel; the rest of the approved artwork is unchanged. Run it locally with:
+The renderer uses the module version only to name the immutable file. It preserves
+the approved artwork and its layout, updating only the D&D5e version in the original
+compatibility line from `module.json`. Run it locally with:
 
 ```bash
 python -m pip install Pillow
