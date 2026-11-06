@@ -11,8 +11,8 @@
 ![dnd5e minimum](https://img.shields.io/badge/dnd5e_min-6.0.3%2B-blue)
 ![dnd5e verified](https://img.shields.io/badge/dnd5e_verified-6.0.6-blue)
 
-[![Latest Release](https://img.shields.io/github/v/release/foundryvtt-sinregistrar/dnd5e-death-token-effects?label=release)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
-[![Downloads Latest Release](https://img.shields.io/github/downloads/foundryvtt-sinregistrar/dnd5e-death-token-effects/latest/total?label=descargas%20%C3%BAltima%20release)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
+[![Última versión](https://img.shields.io/github/v/release/foundryvtt-sinregistrar/dnd5e-death-token-effects?label=versi%C3%B3n)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
+[![Descargas de la última versión](https://img.shields.io/github/downloads/foundryvtt-sinregistrar/dnd5e-death-token-effects/latest/total?label=descargas%20%C3%BAltima%20versi%C3%B3n)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
 
 [![Downloads Total](https://img.shields.io/github/downloads/foundryvtt-sinregistrar/dnd5e-death-token-effects/total?label=descargas%20totales)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases)
 
@@ -174,7 +174,7 @@ https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/la
 
 ### Opción 2 — Instalación manual
 
-1. Descarga el ZIP de la release.
+1. Descarga el ZIP de la versión publicada.
 2. Descomprime el archivo.
 3. Copia la carpeta `dnd5e-death-token-effects` dentro de:
 
@@ -196,11 +196,11 @@ C:\docker\foundryvtt\foundryvtt-14\data\Data\modules\dnd5e-death-token-effects
 
 ## Desarrollo: publicación
 
-Este proyecto incluye una infraestructura de release similar al otro módulo:
+Este proyecto incluye una infraestructura de publicación similar a la del otro módulo:
 
 - `dev-tools/buildScripts/build_release.py` genera el ZIP desde `git archive`.
 - `.gitattributes` controla qué entra en el ZIP mediante `export-ignore`.
-- `.github/workflows/release.yml` crea una release draft al subir un tag `v*`.
+- `.github/workflows/release.yml` crea una versión preliminar al subir un tag `v*`.
 - Se suben dos ZIPs: `dnd5e-death-token-effects-<version>.zip` y `dnd5e-death-token-effects.zip`.
 
 Flujo recomendado:
@@ -217,7 +217,7 @@ git push origin main
 git push origin v1.14.5
 ```
 
-> La etiqueta debe coincidir exactamente con la versión de `module.json`: para esta release, `v1.14.5`.
+> La etiqueta debe coincidir exactamente con la versión de `module.json`: para esta versión, `v1.14.5`.
 
 ---
 
