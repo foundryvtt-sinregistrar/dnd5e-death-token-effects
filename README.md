@@ -6,11 +6,10 @@
   <img src="docs/foundry/assets/banner-death-token-effects.webp" alt="D&amp;D5e Death Token Effects">
 </p>
 
-**Versión actual — Foundry v14**
-
-![Foundry v14](https://img.shields.io/badge/Foundry-v14-green)
-![Foundry verified 14.369](https://img.shields.io/badge/Verified-14.369-blue)
-![System dnd5e 6.0.3](https://img.shields.io/badge/dnd5e-6.0.3-blue)
+![Foundry minimum](https://img.shields.io/badge/Foundry_min-14.367%2B-green)
+![Foundry verified](https://img.shields.io/badge/Foundry_verified-14.369-blue)
+![dnd5e minimum](https://img.shields.io/badge/dnd5e_min-6.0.3%2B-blue)
+![dnd5e verified](https://img.shields.io/badge/dnd5e_verified-6.0.6-blue)
 
 [![Latest Release](https://img.shields.io/github/v/release/foundryvtt-sinregistrar/dnd5e-death-token-effects?label=release)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
 [![Downloads Latest Release](https://img.shields.io/github/downloads/foundryvtt-sinregistrar/dnd5e-death-token-effects/latest/total?label=descargas%20%C3%BAltima%20release)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
