@@ -7,7 +7,7 @@
 </p>
 
 ![Foundry minimum](https://img.shields.io/badge/Foundry_min-14.367%2B-green)
-![Foundry verified](https://img.shields.io/badge/Foundry_verified-14.369-blue)
+![Foundry verified](https://img.shields.io/badge/Foundry_verified-14.370-blue)
 ![dnd5e minimum](https://img.shields.io/badge/dnd5e_min-6.0.3%2B-blue)
 ![dnd5e verified](https://img.shields.io/badge/dnd5e_verified-6.0.6-blue)
 
@@ -27,7 +27,7 @@ It displays the D&D5e death icon over the token when an actor is at **0 HP** and
 | Item | Version |
 |---|---|
 | Minimum Foundry VTT | `14.367` |
-| Verified Foundry VTT | `14.369` |
+| Verified Foundry VTT | `14.370` |
 | System | `dnd5e` (`6.0.3` minimum and verified) |
 | Module version | `1.14.5` |
 

@@ -7,7 +7,7 @@
 </p>
 
 ![Foundry minimum](https://img.shields.io/badge/Foundry_min-14.367%2B-green)
-![Foundry verified](https://img.shields.io/badge/Foundry_verified-14.369-blue)
+![Foundry verified](https://img.shields.io/badge/Foundry_verified-14.370-blue)
 ![dnd5e minimum](https://img.shields.io/badge/dnd5e_min-6.0.3%2B-blue)
 ![dnd5e verified](https://img.shields.io/badge/dnd5e_verified-6.0.6-blue)
 
@@ -29,7 +29,7 @@ Muestra el icono de muerte de D&D5e sobre el token cuando un actor está a **0 H
 | Elemento | Versión |
 |---|---|
 | Foundry VTT mínimo | `14.367` |
-| Foundry VTT verificado | `14.369` |
+| Foundry VTT verificado | `14.370` |
 | Sistema | `dnd5e` (`6.0.3` mínimo y verificado) |
 | Versión del módulo | `1.14.5` |
 
