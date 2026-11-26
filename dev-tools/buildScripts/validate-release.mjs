@@ -24,7 +24,7 @@ if (manifest.compatibility.minimum !== "14.367" || manifest.compatibility.verifi
   throw new Error("La compatibilidad de Foundry no coincide con la politica del proyecto.");
 }
 const dnd5e = manifest.relationships.systems?.find(({ id }) => id === "dnd5e");
-if (dnd5e?.compatibility?.minimum !== "6.0.3" || dnd5e.compatibility.verified !== "6.0.6") {
+if (dnd5e?.compatibility?.minimum !== "6.0.3" || dnd5e.compatibility.verified !== "6.1.1") {
   throw new Error("La compatibilidad de DnD5e no coincide con la politica del proyecto.");
 }
 for (const { path } of manifest.languages) await readFile(path, "utf8");

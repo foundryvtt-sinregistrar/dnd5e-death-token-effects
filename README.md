@@ -9,7 +9,7 @@
 ![Foundry minimum](https://img.shields.io/badge/Foundry_min-14.367%2B-green)
 ![Foundry verified](https://img.shields.io/badge/Foundry_verified-14.370-blue)
 ![dnd5e minimum](https://img.shields.io/badge/dnd5e_min-6.0.3%2B-blue)
-![dnd5e verified](https://img.shields.io/badge/dnd5e_verified-6.0.6-blue)
+![dnd5e verified](https://img.shields.io/badge/dnd5e_verified-6.1.1-blue)
 
 [![Última versión](https://img.shields.io/github/v/release/foundryvtt-sinregistrar/dnd5e-death-token-effects?label=versi%C3%B3n)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
 [![Descargas de la última versión](https://img.shields.io/github/downloads/foundryvtt-sinregistrar/dnd5e-death-token-effects/latest/total?label=descargas%20%C3%BAltima%20versi%C3%B3n)](https://github.com/foundryvtt-sinregistrar/dnd5e-death-token-effects/releases/latest)
