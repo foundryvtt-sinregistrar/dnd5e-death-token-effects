@@ -36,3 +36,4 @@ __pycache__/ export-ignore
 APPLY.md export-ignore
 DEVELOPER.md export-ignore
 staged.txt export-ignore
+package.json export-ignore
