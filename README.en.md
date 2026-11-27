@@ -29,7 +29,7 @@ It displays the D&D5e death icon over the token when an actor is at **0 HP** and
 | Minimum Foundry VTT | `14.367` |
 | Verified Foundry VTT | `14.370` |
 | System | `dnd5e` (`6.0.3` minimum and verified) |
-| Module version | `1.14.5` |
+| Module version | `1.14.6` |
 
 ---
 
@@ -203,12 +203,12 @@ python dev-tools/buildScripts/build_release.py --allow-dirty
 ### For a real release
 git add .
 git commit -m "build(release): standardize validation and packaging"
-git tag v1.14.5
+git tag v1.14.6
 git push origin main
-git push origin v1.14.5
+git push origin v1.14.6
 ```
 
-> The tag must match the `module.json` version exactly: for this release, `v1.14.5`.
+> The tag must match the `module.json` version exactly: for this release, `v1.14.6`.
 
 ---
 
