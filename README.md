@@ -31,7 +31,7 @@ Muestra el icono de muerte de D&D5e sobre el token cuando un actor está a **0 H
 | Foundry VTT mínimo | `14.367` |
 | Foundry VTT verificado | `14.370` |
 | Sistema | `dnd5e` (`6.0.3` mínimo y verificado) |
-| Versión del módulo | `1.14.6` |
+| Versión del módulo | `1.14.7` |
 
 ---
 
@@ -212,12 +212,12 @@ python dev-tools/buildScripts/build_release.py --allow-dirty
 ### Para publicar una versión real
 git add .
 git commit -m "build(release): standardize validation and packaging"
-git tag v1.14.6
+git tag v1.14.7
 git push origin main
-git push origin v1.14.6
+git push origin v1.14.7
 ```
 
-> La etiqueta debe coincidir exactamente con la versión de `module.json`: para esta versión, `v1.14.6`.
+> La etiqueta debe coincidir exactamente con la versión de `module.json`: para esta versión, `v1.14.7`.
 
 ---
 

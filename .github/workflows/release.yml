@@ -35,6 +35,7 @@ jobs:
           npm run validate
           npm test
           npm run test:release
+          npm run test:banner
       - name: Verify tag matches manifest version
         env:
           RELEASE_TAG: ${{ github.ref_name }}

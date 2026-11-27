@@ -13,6 +13,15 @@ The format is based on **Keep a Changelog**, and this project follows a custom v
 
 ## [Unreleased]
 
+## [1.14.7] - 2026-11-27
+
+### Fixed
+
+- Render the complete D&D5e version in release banners so minor and major upgrades do not block publication.
+- Add presentation regression tests for D&D5e 6.1.1, longer versions, and the current manifest.
+
+The v1.14.6 tag is retained for traceability; its release workflow stopped before creating a release.
+
 ## [1.14.6] - 2026-11-27
 
 ### Changed

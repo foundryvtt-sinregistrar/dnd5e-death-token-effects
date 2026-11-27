@@ -48,24 +48,26 @@ def banner_font(size: int) -> ImageFont.FreeTypeFont:
 
 
 def replace_dnd5e_version(image: Image.Image, version: str) -> None:
-    """Refresh only the final version glyphs; preserve the legacy banner layout."""
+    """Refresh the complete version label, including major and minor changes."""
     if version == BASE_DND5E_VERSION:
         return
 
     width, height = image.size
-    if version[:-1] != BASE_DND5E_VERSION[:-1]:
-        raise ValueError(f"Banner artwork must be refreshed for a version outside the {BASE_DND5E_VERSION[:-1]}x series.")
-
-    # The final digit lies on unadorned parchment. Replace that glyph only; this
-    # retains the original typography, linework, and every other visual element.
-    target = (int(width * 0.319), int(height * 0.866), int(width * 0.331), int(height * 0.913))
-    source = (target[0], int(height * 0.813), target[2], int(height * 0.860))
+    # Sample blank parchment below the complete label, clear its old digits,
+    # and keep the neighboring system name and decorative rule intact.
+    target = (int(width * 0.294), int(height * 0.866), int(width * 0.333), int(height * 0.913))
+    source_top = int(height * 0.921)
+    source = (target[0], source_top, target[2], source_top + target[3] - target[1])
     patch = image.crop(source)
     image.paste(patch, target[:2])
 
     draw = ImageDraw.Draw(image)
-    label_font = banner_font(round(height * 0.035))
-    draw.text((target[0] - 1, int(height * 0.866)), version[-1], font=label_font, fill=(81, 52, 37))
+    size = round(height * 0.035)
+    label_font = banner_font(size)
+    while draw.textlength(version, font=label_font) > target[2] - target[0] - 2 and size > 8:
+        size -= 1
+        label_font = banner_font(size)
+    draw.text((target[0], target[1]), version, font=label_font, fill=(81, 52, 37))
 
 
 def render(manifest: dict, output: Path) -> None:
